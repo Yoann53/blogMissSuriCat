@@ -1,4 +1,5 @@
 Pierre bonjour
+<<<<<<< HEAD
 
 // ceci est le code de mon first commit
 
@@ -9,3 +10,6 @@ Pierre bonjour
 // 4 - Quatrième commit
 
 // 5 - Cinquième commit
+=======
+Pharas la mort est � vos trousse
+>>>>>>> 8728160738ea0fcd1320032fc4e2ad9928e62a1d
