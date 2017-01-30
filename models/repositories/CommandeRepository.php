@@ -1,3 +1,5 @@
+<?php
+
 class CommandeRepository
 {
 
@@ -5,7 +7,7 @@ class CommandeRepository
 	public function getAll($pdo) {
 
 		//Effectuer la requête en bdd pour récupérer l'ensemble des clients enregistrés en bdd
-		$resultats = $pdo->query('SELECT p.id, p.civilite, p.nom, p.prenom, p.date_naissance, p.adresse, p.code_postal, p.ville, c.bic, c.iban FROM personne p INNER JOIN client c ON p.id = c.id');
+		$resultats = $pdo->query('SELECT p.civilite, p.nom, p.prenom, com.id, com.ref, com.date_expedition, com.date_cmd, s.libelle FROM commande com INNER JOIN client c ON com.client_id = c.id INNER JOIN personne p ON p.id = c.id INNER JOIN statut s ON com.statut_id = s.id');
 
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 
@@ -38,4 +40,4 @@ class CommandeRepository
 
 		return $listeClients;
 	}
-}@
+}
