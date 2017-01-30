@@ -18,23 +18,27 @@ class CommandeRepository
 		// 3 - pour chaque objet client instanciés et hydratés, les ajouter dans un tableau
 		// 4 - retourner ensuite ce tableau avec l'instruction return
 
-		$listeClients = array();
+		$listeCommandes = array();
 
 		while($obj = $resultats->fetch()){	
 
 			$client = new Client();
-			$client->setId($obj->id);
 			$client->setCivilite($obj->civilite);
 			$client->setNom($obj->nom);
 			$client->setPrenom($obj->prenom);
-			$client->setDateNaissance($obj->date_naissance);
-			$client->setAdresse($obj->adresse);
-			$client->setCp($obj->code_postal);
-			$client->setVille($obj->ville);
-			$client->setBic($obj->bic);
-			$client->setIban($obj->iban);
 
-			$listeClients[] = $client;
+			$statut = new Statut();
+			$statut->setLibelle($obj->libelle);
+
+			$commande = new Commande();
+			$commande->setId($obj->id);
+			$commande->setClient($client);
+			$commande->setStatut($statut);
+			$commande->setReference($obj->ref);
+			$commande->setDateExpedition($obj->date_expedition);
+			$commande->setDateCommande($obj->date_cmd);
+
+			$listeCommandes[] = $commande;
 
 		}
 
