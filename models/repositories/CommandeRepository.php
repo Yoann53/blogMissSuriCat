@@ -42,6 +42,6 @@ class CommandeRepository
 
 		}
 
-		return $listeClients;
+		return $listeCommandes;
 	}
 }

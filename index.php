@@ -5,6 +5,9 @@ include_once('library/PDOFactory.php');
 include_once('models/entities/Personne.php');
 include_once('models/entities/Client.php');
 include_once('models/entities/User.php');
+include_once('models/entities/Commande.php');
+include_once('models/entities/Statut.php');
+include_once('models/repositories/CommandeRepository.php');
 include_once('models/repositories/ClientRepository.php');
 include_once('models/repositories/UserRepository.php');
 

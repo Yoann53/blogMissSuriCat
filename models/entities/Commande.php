@@ -18,11 +18,11 @@ class Commande
 		$this->id = $id;
 	}
 
-	public function getRef() {
+	public function getReference() {
 		return $this->ref;
 	}
 
-	public function setRef($ref) {
+	public function setReference($ref) {
 		$this->ref = $ref;
 	}
 

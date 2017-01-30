@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <?php
-    foreach ($listeClients as $commande) {
+    foreach ($listeCommandes as $commande) {
       echo '<tr>';
       echo '<td>' . $commande->getClient()->getCivilite() . '</td>';
       echo '<td>' . $commande->getClient()->getNom() . '</td>';
