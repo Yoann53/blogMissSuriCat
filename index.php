@@ -55,6 +55,13 @@ switch ($action) {
 		$vueAAfficher = "views/listClient.php";
 		break;
 
+	case "listCommande":
+		//On prépare la vue a afficher avec les données dont elle a besoin
+		$commandeRepo = new CommandeRepository();
+		$listeCommandes = $commandeRepo->getAll($pdo);
+		$vueAAfficher = "views/listCommande.php";
+		break;
+
 	//Affiche le formulaire d'ajout d'un client
 	case "formAddClient": 
 		//On prépare la vue à afficher
